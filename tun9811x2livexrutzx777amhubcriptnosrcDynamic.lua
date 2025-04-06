@@ -487,7 +487,7 @@ Tabs.AutoFarm:AddToggle("Auto Farm", {
         StopTween(getgenv().Config["Auto Farm"])
     end
 })
-local pos = CFrame.new(0, 0, 1)
+local pos = CFrame.new(0, 0, 1.5)
 spawn(function()
     while wait() do
         if getgenv().Config["Auto Farm"] and _G['Select Monster'] == "LongIn" then
@@ -1842,6 +1842,7 @@ spawn(function()
         end
     end
 end)
+--[[]
 spawn(function()
     while wait() do
         if getgenv().Config["Auto Farm"] or getgenv().Config["Auto Farm Bosses"] or getgenv().Config["Auto Farm [ Nearest ]"] or getgenv().Config["Auto Farm Dungeon"] then
@@ -1880,9 +1881,10 @@ spawn(function()
         end
     end
 end)
+--]]
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm"] or getgenv().Config["Auto Farm Bosses"] or getgenv().Config["Auto Farm [ Nearest ]"] or getgenv().Config["Auto Farm Dungeon"] or getgenv().Config["Auto Farm Rank"] then
+        if getgenv().Config["Auto Farm"] or getgenv().Config["Auto Farm Bosses"] or getgenv().Config["Auto Farm [ Nearest ]"] or getgenv().Config["Auto Farm Dungeon"] or getgenv().Config["Auto Farm Rank"] or getgenv().Config["Auto Farm lnfernal Castle"] then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetDescendants()) do
                     if v:IsA("BasePart") and v:FindFirstChild("HealthBar") then
