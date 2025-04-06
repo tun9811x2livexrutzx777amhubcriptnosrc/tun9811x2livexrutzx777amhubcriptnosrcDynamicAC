@@ -2365,7 +2365,6 @@ spawn(function()
         end
     end
 end)
-local checkcccccc
 spawn(function()
     while wait() do
         if getgenv().Config["Auto Send Pet Attack"] and _G['Attack Mode'] == "Fast" then
@@ -2373,8 +2372,7 @@ spawn(function()
                 for i, v in pairs(game:GetService("Players").LocalPlayer.leaderstats.Inventory.Pets:GetChildren()) do
                     for i, v2 in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                         if (v2.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 50 then
-                            checkcccccc = 0
-                            if v2.HealthBar.Enabled == true and checkcccccc == 0 then
+                            if v2.HealthBar.Enabled == true then
                                 repeat
                                     wait(0.25)
                                     local args = {
@@ -2469,8 +2467,7 @@ spawn(function()
                                     }
                                     game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild(
                                         "dataRemoteEvent"):FireServer(unpack(args))
-                                    checkcccccc = 1
-                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or checkcccccc == 0
+                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false
                             end
                         end
                     end
