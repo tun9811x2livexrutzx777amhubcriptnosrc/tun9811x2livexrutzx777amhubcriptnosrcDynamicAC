@@ -2844,6 +2844,64 @@ spawn(function()
         end
     end
 end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Dungeon"] and game.PlaceId == 128336380114944 then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                                StopTween(getgenv().Config["Auto Farm Dungeon"])
+                                wait(0.4)
+                            end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                            repeat
+                                wait()
+                                TP(v.HumanoidRootPart.CFrame * pos)
+                            until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            StopTween(getgenv().Config["Auto Farm Dungeon"])
+                            wait(0.4)
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                            repeat
+                                wait()
+                                TP(v.HumanoidRootPart.CFrame * pos)
+                            until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            StopTween(getgenv().Config["Auto Farm Dungeon"])
+                            wait(0.4)
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                            repeat
+                                wait()
+                                TP(v.HumanoidRootPart.CFrame * pos)
+                            until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            StopTween(getgenv().Config["Auto Farm Dungeon"])
+                            wait(0.4)
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Workspace = game:GetService("Workspace")
