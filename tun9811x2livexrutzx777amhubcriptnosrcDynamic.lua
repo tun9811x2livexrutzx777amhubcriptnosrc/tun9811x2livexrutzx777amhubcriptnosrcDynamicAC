@@ -258,7 +258,6 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint"
 end
 tween:Play()
 end
---]]
 function TP(Pos)
     local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     local tweenInfo = TweenInfo.new(Distance / getgenv().Config["Tween Speed"], Enum.EasingStyle.Linear)
@@ -277,6 +276,10 @@ function TP(Pos)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
     end
     tween:Play()
+end
+--]]
+function TP(Pos)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  Pos
 end
 function TP1(Pos)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  Pos
@@ -328,6 +331,7 @@ local function isAutoEnabled()
     end
     return false
 end
+--[[]
 spawn(function()
     while wait() do
         if isAutoEnabled() then
@@ -342,6 +346,7 @@ spawn(function()
         end
     end
 end)
+--]]
 RunService.Stepped:Connect(function()
     if isAutoEnabled() then
         for _, v in pairs(Players.LocalPlayer.Character:GetDescendants()) do
@@ -508,7 +513,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "LongIn" or v.HealthBar.Enabled == false
                                 end
@@ -534,7 +539,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Anders" or v.HealthBar.Enabled == false
                                 end
@@ -559,7 +564,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Eminel" or v.HealthBar.Enabled == false
                                 end
@@ -584,7 +589,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Gonshee" or v.HealthBar.Enabled == false
                                 end
@@ -609,7 +614,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Largalgan" or v.HealthBar.Enabled == false
                                 end
@@ -635,7 +640,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Blossom" or v.HealthBar.Enabled == false
                                 end
@@ -660,7 +665,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Michille" or v.HealthBar.Enabled == false
                                 end
@@ -685,7 +690,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Genji" or v.HealthBar.Enabled == false
                                 end
@@ -710,7 +715,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Fyakuya" or v.HealthBar.Enabled == false
                                 end
@@ -735,7 +740,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Wind" or v.HealthBar.Enabled == false
                                 end
@@ -760,7 +765,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Red Ant" or v.HealthBar.Enabled == false
                                 end
@@ -785,7 +790,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Royal Red Ant" or v.HealthBar.Enabled == false
                                 end
@@ -810,7 +815,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Snake Man" or v.HealthBar.Enabled == false
                                 end
@@ -836,7 +841,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Shark Man" or v.HealthBar.Enabled == false
                                 end
@@ -861,7 +866,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Black Crow" or v.HealthBar.Enabled == false
                                 end
@@ -886,7 +891,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Daek" or v.HealthBar.Enabled == false
                                 end
@@ -911,7 +916,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Light Admiral" or v.HealthBar.Enabled == false
                                 end
@@ -936,7 +941,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Soondoo" or v.HealthBar.Enabled == false
                                 end
@@ -961,7 +966,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Sortudo" or v.HealthBar.Enabled == false
                                 end
@@ -986,7 +991,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(7, 7, 3.5) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Ant Queen" or v.HealthBar.Enabled == false
                                 end
@@ -1010,7 +1015,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Luryu" or v.HealthBar.Enabled == false
                                 end
@@ -1035,7 +1040,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Diablo" or v.HealthBar.Enabled == false
                                 end
@@ -1060,7 +1065,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Gosuke" or v.HealthBar.Enabled == false
                                 end
@@ -1085,7 +1090,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Golyne" or v.HealthBar.Enabled == false
                                 end
@@ -1111,7 +1116,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Heaven" or v.HealthBar.Enabled == false
                                 end
@@ -1136,7 +1141,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Ika" or v.HealthBar.Enabled == false
                                 end
@@ -1161,7 +1166,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Zere" or v.HealthBar.Enabled == false
                                 end
@@ -1236,7 +1241,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "LongIn" or v.HealthBar.Enabled == false
                                 end
@@ -1261,7 +1266,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Soondoo" or v.HealthBar.Enabled == false
                                 end
@@ -1286,7 +1291,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Daek" or v.HealthBar.Enabled == false
                                 end
@@ -1311,7 +1316,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Anders" or v.HealthBar.Enabled == false
                                 end
@@ -1337,7 +1342,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Gonshee" or v.HealthBar.Enabled == false
                                 end
@@ -1362,7 +1367,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Largalgan" or v.HealthBar.Enabled == false
                                 end
@@ -1387,7 +1392,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Blossom" or v.HealthBar.Enabled == false
                                 end
@@ -1412,7 +1417,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Snake Man" or v.HealthBar.Enabled == false
                                 end
@@ -1437,7 +1442,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Black Crow" or v.HealthBar.Enabled == false
                                 end
@@ -1462,7 +1467,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Shark Man" or v.HealthBar.Enabled == false
                                 end
@@ -1487,7 +1492,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Eminel" or v.HealthBar.Enabled == false
                                 end
@@ -1512,7 +1517,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Light Admiral" or v.HealthBar.Enabled == false
                                 end
@@ -1537,7 +1542,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Luryu" or v.HealthBar.Enabled == false
                                 end
@@ -1562,7 +1567,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Fyakuya" or v.HealthBar.Enabled == false
                                 end
@@ -1587,7 +1592,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Genji" or v.HealthBar.Enabled == false
                                 end
@@ -1612,7 +1617,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Sortudo" or v.HealthBar.Enabled == false
                                 end
@@ -1637,7 +1642,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Michille" or v.HealthBar.Enabled == false
                                 end
@@ -1662,7 +1667,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Wind" or v.HealthBar.Enabled == false
                                 end
@@ -1687,7 +1692,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Ant King" or v.HealthBar.Enabled == false
                                 end
@@ -1712,7 +1717,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Golyne" or v.HealthBar.Enabled == false
                                 end
@@ -1737,7 +1742,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Gosuke" or v.HealthBar.Enabled == false
                                 end
@@ -1762,7 +1767,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Diablo" or v.HealthBar.Enabled == false
                                 end
@@ -1787,7 +1792,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Heaven" or v.HealthBar.Enabled == false
                                 end
@@ -1812,7 +1817,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Ika" or v.HealthBar.Enabled == false
                                 end
@@ -1837,7 +1842,7 @@ spawn(function()
                             if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
                                     repeat
-                                        wait()
+                                        task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Zere" or v.HealthBar.Enabled == false
                                 end
@@ -1924,7 +1929,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
-                                    wait()
+                                    task.wait()
                                     TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
                                 StopTween(getgenv().Config["Auto Farm Rank"])
@@ -2008,7 +2013,7 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= getgenv().Config["Distance"] then
                         repeat
-                            wait()
+                            task.wait()
                             TP(v.HumanoidRootPart.CFrame * pos)
                         until not getgenv().Config["Auto Farm [ Nearest ]"] or v.HealthBar.Enabled == false
                     end
@@ -2018,6 +2023,7 @@ spawn(function()
     end
 end)
 Tabs.AutoFarm:AddSection("Settings [ ⚙️ ]")
+--[[]
 Tabs.AutoFarm:AddSlider("Tween Speed",
     {
         Title = "Tween Speed",
@@ -2031,6 +2037,7 @@ Tabs.AutoFarm:AddSlider("Tween Speed",
             Update_Setting(getgenv()['MyName'])
         end
     })
+    --]]
 getgenv().Config["Tween Speed"] = 9999999999999999999
 Tabs.AutoFarm:AddToggle("Auto Destroy", {
     Title = "Auto Destroy",
@@ -2458,7 +2465,7 @@ spawn(function()
                         if (v2.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 25 then
                             if v2.HealthBar.Enabled == true then
                                 repeat
-                                    wait(0.25)
+                                    wait(0.22)
                                     local args = {
                                         [1] = {
                                             [1] = {
@@ -2790,7 +2797,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
-                                    wait()
+                                    task.wait()
                                     TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                                 StopTween(getgenv().Config["Auto Farm Dungeon"])
@@ -2803,7 +2810,7 @@ spawn(function()
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
-                                wait()
+                                task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
@@ -2815,7 +2822,7 @@ spawn(function()
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
-                                wait()
+                                task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
@@ -2836,7 +2843,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
-                                    wait()
+                                    task.wait()
                                     TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                                 StopTween(getgenv().Config["Auto Farm Dungeon"])
@@ -2849,7 +2856,7 @@ spawn(function()
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
-                                wait()
+                                task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
@@ -2861,7 +2868,7 @@ spawn(function()
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
-                                wait()
+                                task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
@@ -3009,9 +3016,10 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
-                                    wait()
+                                    task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
+                                wait(0.4)
                             end
                         end
                     end
@@ -3020,9 +3028,10 @@ spawn(function()
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
-                                wait()
+                                task.wait()
                                 TP(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
+                            wait(0.4)
                         end
                     end
                 end
