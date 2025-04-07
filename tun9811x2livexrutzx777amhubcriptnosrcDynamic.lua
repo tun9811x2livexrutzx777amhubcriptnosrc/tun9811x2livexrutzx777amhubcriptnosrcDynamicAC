@@ -2755,6 +2755,15 @@ spawn(function()
         end
     end
 end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Punch"] then
+            pcall(function()
+                Click()
+            end)
+        end
+    end
+end)
 Tabs.Dungeons:AddSection("Dungeons [ 👑 ]")
 Tabs.Dungeons:AddToggle("Auto Farm Dungeon", {
     Title = "Auto Farm Dungeon",
