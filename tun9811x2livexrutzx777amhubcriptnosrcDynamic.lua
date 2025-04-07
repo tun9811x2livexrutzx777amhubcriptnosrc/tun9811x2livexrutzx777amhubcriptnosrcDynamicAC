@@ -2746,28 +2746,6 @@ spawn(function()
                                 }
                                 game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild(
                                     "dataRemoteEvent"):FireServer(unpack(args))
-                                local Players = game:GetService("Players")
-
-                                local player = Players.LocalPlayer
-                                local character = player.Character or player.CharacterAdded:Wait()
-                                local humanoid = character:FindFirstChildOfClass("Humanoid")
-
-                                -- ค้นหา Animator
-                                local animator = humanoid:FindFirstChildOfClass("Animator") or
-                                    humanoid:WaitForChild("Animator")
-                                -- ลบแอนิเมชันเก่าทันที
-                                for _, track in ipairs(animator:GetPlayingAnimationTracks()) do
-                                    track:Stop(0) -- ใส่ค่า 0 เพื่อลบแอนิเมชันทันที
-                                end
-                                -- โหลดแอนิเมชันท่ายืนใหม่
-                                local animation = Instance.new("Animation")
-                                animation.AnimationId = "rbxassetid://101376733240639" -- เปลี่ยนเป็นไอดีที่ต้องการ
-
-                                local animationTrack = animator:LoadAnimation(animation)
-                                animationTrack.Looped = true -- ทำให้เล่นซ้ำ
-                                animationTrack.Priority = Enum.AnimationPriority
-                                    .Action -- ตั้งค่าให้เล่นก่อนแอนิเมชันอื่น
-                                animationTrack:Play(0) -- ใส่ 0 เพื่อให้เล่นทันทีโดยไม่มีดีเลย์
                                 Click()
                             end
                         end
