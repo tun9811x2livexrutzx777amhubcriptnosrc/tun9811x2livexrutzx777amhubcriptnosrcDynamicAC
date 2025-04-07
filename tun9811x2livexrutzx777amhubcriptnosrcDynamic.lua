@@ -2237,18 +2237,6 @@ spawn(function()
     end
 end)
 --]]
-local AttackMode = Tabs.AutoFarm:AddDropdown("Attack Mode", {
-    Title = "Attack Mode",
-    Description = "",
-    Values = {"Fast", "Normal"},
-    Multi = false,
-    Default = getgenv().Config["Attack Mode"] or "N/A",
-})
-AttackMode:OnChanged(function(Value)
-    _G['Attack Mode'] = Value
-    getgenv().Config["Attack Mode"] = Value
-    Update_Setting(getgenv()['MyName'])
-end)
 Tabs.AutoFarm:AddToggle("Auto Send Pet Attack", {
     Title = "Auto Send Pet Attack",
     Description = "",
