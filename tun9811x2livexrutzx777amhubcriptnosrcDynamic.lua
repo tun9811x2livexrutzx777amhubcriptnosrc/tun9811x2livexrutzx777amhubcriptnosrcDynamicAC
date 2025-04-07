@@ -2794,7 +2794,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -2808,7 +2808,7 @@ spawn(function()
                 end
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             repeat
                                 task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
@@ -2820,7 +2820,7 @@ spawn(function()
                 end
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             repeat
                                 task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
@@ -2840,7 +2840,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -2854,7 +2854,7 @@ spawn(function()
                 end
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             repeat
                                 task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
@@ -2866,7 +2866,7 @@ spawn(function()
                 end
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             repeat
                                 task.wait()
                                 TP1(v.HumanoidRootPart.CFrame * pos)
@@ -3013,7 +3013,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -3026,7 +3026,7 @@ spawn(function()
                 end
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             repeat
                                 task.wait()
                                 TP(v.HumanoidRootPart.CFrame * pos)
