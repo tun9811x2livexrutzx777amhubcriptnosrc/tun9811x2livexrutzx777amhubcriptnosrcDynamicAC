@@ -3010,10 +3010,8 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     wait()
-                                    TP1(v.HumanoidRootPart.CFrame * pos)
+                                    TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                                StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
-                                wait(0.4)
                             end
                         end
                     end
@@ -3023,34 +3021,8 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
+                                TP(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                            StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
-                            wait(0.4)
-                        end
-                    end
-                end
-                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
-                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
-                            repeat
-                                wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                            StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
-                            wait(0.4)
-                        end
-                    end
-                end
-                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
-                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
-                            repeat
-                                wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                            StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
-                            wait(0.4)
                         end
                     end
                 end
