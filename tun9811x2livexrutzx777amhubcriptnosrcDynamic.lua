@@ -258,6 +258,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint"
 end
 tween:Play()
 end
+--]]
 function TP(Pos)
     local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     local tweenInfo = TweenInfo.new(Distance / getgenv().Config["Tween Speed"], Enum.EasingStyle.Linear)
@@ -277,8 +278,7 @@ function TP(Pos)
     end
     tween:Play()
 end
---]]
-function TP(Pos)
+function TP1(Pos)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  Pos
 end
 function StopTween(target)
@@ -1925,7 +1925,7 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     wait()
-                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                    TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
                                 StopTween(getgenv().Config["Auto Farm Rank"])
                                 wait(0.4)
@@ -2018,7 +2018,6 @@ spawn(function()
     end
 end)
 Tabs.AutoFarm:AddSection("Settings [ ⚙️ ]")
---[[]
 Tabs.AutoFarm:AddSlider("Tween Speed",
     {
         Title = "Tween Speed",
@@ -2032,7 +2031,6 @@ Tabs.AutoFarm:AddSlider("Tween Speed",
             Update_Setting(getgenv()['MyName'])
         end
     })
-    --]]
 getgenv().Config["Tween Speed"] = 9999999999999999999
 Tabs.AutoFarm:AddToggle("Auto Destroy", {
     Title = "Auto Destroy",
@@ -2796,7 +2794,7 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     wait()
-                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                    TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                                 StopTween(getgenv().Config["Auto Farm Dungeon"])
                                 wait(0.4)
@@ -2809,7 +2807,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
                             wait(0.4)
@@ -2821,7 +2819,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
                             wait(0.4)
@@ -2842,7 +2840,7 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     wait()
-                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                    TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                                 StopTween(getgenv().Config["Auto Farm Dungeon"])
                                 wait(0.4)
@@ -2855,7 +2853,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
                             wait(0.4)
@@ -2867,7 +2865,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm Dungeon"])
                             wait(0.4)
@@ -3015,7 +3013,7 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     wait()
-                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                    TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
                                 StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
                                 wait(0.4)
@@ -3028,7 +3026,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
                             wait(0.4)
@@ -3040,7 +3038,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
                             wait(0.4)
@@ -3052,7 +3050,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
                             repeat
                                 wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
                             StopTween(getgenv().Config["Auto Farm lnfernal Castle"])
                             wait(0.4)
