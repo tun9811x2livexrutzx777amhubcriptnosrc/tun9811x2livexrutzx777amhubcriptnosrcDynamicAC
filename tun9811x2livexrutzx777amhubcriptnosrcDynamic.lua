@@ -2443,7 +2443,7 @@ spawn(function()
                                         "dataRemoteEvent"):FireServer(unpack(args))
                                     checkcccccc = 1
                                     wait(2)
-                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or checkcccccc == 0
+                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or checkcccccc == 0  or _G['Attack Mode'] ~= "Normal"
                             end
                         end
                     end
@@ -2634,7 +2634,7 @@ spawn(function()
                                     }
                                     game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild(
                                         "dataRemoteEvent"):FireServer(unpack(args))
-                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false
+                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or _G['Attack Mode'] ~= "Fast"
                             end
                         end
                     end
