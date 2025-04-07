@@ -2267,7 +2267,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game:GetService("Players").LocalPlayer.leaderstats.Inventory.Pets:GetChildren()) do
                     for i, v2 in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
-                        if (v2.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 50 then
+                        if (v2.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 25 then
                             checkcccccc = 0
                             if v2.HealthBar.Enabled == true and checkcccccc == 0 then
                                 repeat
@@ -2460,7 +2460,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game:GetService("Players").LocalPlayer.leaderstats.Inventory.Pets:GetChildren()) do
                     for i, v2 in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
-                        if (v2.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 50 then
+                        if (v2.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 25 then
                             if v2.HealthBar.Enabled == true then
                                 repeat
                                     wait(0.25)
