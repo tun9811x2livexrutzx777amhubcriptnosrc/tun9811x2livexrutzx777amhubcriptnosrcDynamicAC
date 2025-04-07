@@ -2261,7 +2261,7 @@ Tabs.AutoFarm:AddToggle("Auto Send Pet Attack", {
 local checkcccccc
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Send Pet Attack"] and _G['Attack Mode'] == "Normal" then
+        if getgenv().Config["Auto Send Pet Attack"] then
             pcall(function()
                 for i, v in pairs(game:GetService("Players").LocalPlayer.leaderstats.Inventory.Pets:GetChildren()) do
                     for i, v2 in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
@@ -2443,7 +2443,7 @@ spawn(function()
                                         "dataRemoteEvent"):FireServer(unpack(args))
                                     checkcccccc = 1
                                     wait(2)
-                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or checkcccccc == 0  or _G['Attack Mode'] ~= "Normal"
+                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or checkcccccc == 0  or getgenv().Config["Enabled Fast Pet Attack"]
                             end
                         end
                     end
@@ -2452,9 +2452,18 @@ spawn(function()
         end
     end
 end)
+Tabs.AutoFarm:AddToggle("Enabled Fast Pet Attack", {
+    Title = "Enabled Fast Pet Attack",
+    Description = "",
+    Default = getgenv().Config["Enabled Fast Pet Attack"] or false,
+    Callback = function(Value)
+        getgenv().Config["Enabled Fast Pet Attack"] = Value
+        Update_Setting(getgenv()['MyName'])
+    end
+})
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Send Pet Attack"] and _G['Attack Mode'] == "Fast" then
+        if getgenv().Config["Auto Send Pet Attack"] and getgenv().Config["Enabled Fast Pet Attack"] then
             pcall(function()
                 for i, v in pairs(game:GetService("Players").LocalPlayer.leaderstats.Inventory.Pets:GetChildren()) do
                     for i, v2 in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
@@ -2634,7 +2643,7 @@ spawn(function()
                                     }
                                     game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild(
                                         "dataRemoteEvent"):FireServer(unpack(args))
-                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or _G['Attack Mode'] ~= "Fast"
+                                until not getgenv().Config["Auto Send Pet Attack"] or v2.HealthBar.Enabled == false or not getgenv().Config["Enabled Fast Pet Attack"]
                             end
                         end
                     end
