@@ -2858,6 +2858,31 @@ spawn(function()
         end
     end
 end)
+Tabs.Dungeons:AddToggle("Enabled Instant Leave Dungeon", {
+    Title = "Enabled Instant Leave Dungeon",
+    Description = "",
+    Default = getgenv().Config["Enabled Instant Leave Dungeon"] or false,
+    Callback = function(Value)
+        getgenv().Config["Enabled Instant Leave Dungeon"] = Value
+        Update_Setting(getgenv()['MyName'])
+    end
+})
+
+spawn(function()
+    while task.wait() do
+        if getgenv().Config["Enabled Instant Leave Dungeon"] and game.PlaceId == 128336380114944 then
+            pcall(function ()
+                for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Hud.UpContanier:GetChildren()) do
+                    if v.Nmae == "DungeonInfo" then
+                        if string.find(v.Text, "Dungeon Ends in") then
+                            game:GetService("TeleportService"):Teleport(87039211657390, game:GetService("Players").LocalPlayer)
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Workspace = game:GetService("Workspace")
