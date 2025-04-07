@@ -3035,6 +3035,17 @@ spawn(function()
                         end
                     end
                 end
+                for i,v in pairs(game.workspace.__Main.__World:GetDescendants()) do
+                    if v.Name == "FirePortal" then
+                        if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
+                            repeat
+                                task.wait()
+                                TP(v.CFrame)
+                            until not getgenv().Config["Auto Farm lnfernal Castle"] or (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 1500 or (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 30
+                            wait(0.4)
+                        end
+                    end
+                end
             end)
         end
     end
@@ -3045,7 +3056,8 @@ spawn(function()
             pcall(function()
                 for i,v in pairs(game.workspace.__Main.__World:GetDescendants()) do
                     if v.Name == "ProximityPrompt" then
-                        fireproximityprompt(v, 100000)
+                        v:SetAttribute("MaxActivationDistance", 100000)
+                        fireproximityprompt(v)
                     end
                 end
             end)
