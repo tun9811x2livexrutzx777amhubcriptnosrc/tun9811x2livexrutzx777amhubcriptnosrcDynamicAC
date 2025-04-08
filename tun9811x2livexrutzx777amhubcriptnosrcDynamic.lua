@@ -431,7 +431,7 @@ Folder = "Dynamic Hub", -- Folder name for saving data (And key)
 Size = UDim2.fromOffset(620, 420), -- UI Size
 Transparent = true,-- UI Transparency
 Theme = "Dark", -- UI Theme
-SideBarWidth = 175, -- UI Sidebar Width (number)
+SideBarWidth = 150, -- UI Sidebar Width (number)
 HasOutline = false, -- Adds Oultines to the window
 })
 Window:EditOpenButton({
