@@ -3359,11 +3359,13 @@ end
 Shop:Dropdown({
 Title = "Select Weapons",
 Multi = false,
-Value = _G['Select Weapons'] or "N/A",
+Value = getgenv().Config['Select Weapons'] or "N/A",
 AllowNone = true,
 Values = Weapons,
 Callback = function(Value)
 _G['Select Weapons'] = Value
+getgenv().Config['Select Weapons'] = Value
+Update_Setting(getgenv()['MyName'])
 end
 })
 Shop:Button({
