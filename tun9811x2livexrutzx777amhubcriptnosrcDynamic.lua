@@ -511,11 +511,13 @@ local Mob = {
 AutoFarm:Dropdown({
 Title = "Select Monster",
 Multi = false,
-Value = _G['Select Monster'] or "N/A",
+Value = getgenv().Config['Select Monster'] or "N/A",
 AllowNone = true,
 Values = Mob,
 Callback = function(Value)
 _G['Select Monster'] = Value
+getgenv().Config['Select Monster'] = Value
+Update_Setting(getgenv()['MyName'])
 end
 })
 AutoFarm:Toggle({
@@ -1240,11 +1242,13 @@ local Bosses = {
 AutoFarm:Dropdown({
 Title = "Select Bosses",
 Multi = false,
-Value = _G['Select Bosses'] or "N/A",
+Value = getgenv().Config['Select Bosses'] or "N/A",
 AllowNone = true,
 Values = Bosses,
 Callback = function(Value)
 _G['Select Bosses'] = Value
+getgenv().Config['Select Bosses'] = Value
+Update_Setting(getgenv()['MyName'])
 end
 })
 AutoFarm:Toggle({
