@@ -3531,21 +3531,6 @@ Tabs.Shop:AddButton({
             unpack(args))
     end
 })
-Tabs.Miscellaneous:AddSection("Gamepass [ 👑 ]")
-Tabs.Miscellaneous:AddButton({
-    Title = "Unlock Gamepass [ Auto Clicker ]",
-    Description = "",
-    Callback = function()
-        game:GetService("Players").LocalPlayer.PlayerScripts.PlayerScripts.AutoClick.Disabled = true
-    end
-})
-Tabs.Miscellaneous:AddButton({
-    Title = "Unlock Gamepass [ Auto Arise ]",
-    Description = "",
-    Callback = function()
-        game:GetService("Players").LocalPlayer.PlayerScripts.PlayerScripts.AutoFarm.Disabled = true
-    end
-})
 Tabs.Miscellaneous:AddSection("Local Player [ ⚙️ ]")
 Tabs.Miscellaneous:AddToggle("Hide Name", {
     Title = "Hide Name",
