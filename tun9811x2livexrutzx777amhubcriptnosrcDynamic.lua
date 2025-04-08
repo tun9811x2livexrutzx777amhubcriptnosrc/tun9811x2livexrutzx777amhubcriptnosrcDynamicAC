@@ -2047,7 +2047,6 @@ spawn(function()
     end
 end)
 Tabs.AutoFarm:AddSection("Settings [ ⚙️ ]")
---[[]
 Tabs.AutoFarm:AddSlider("Tween Speed",
     {
         Title = "Tween Speed",
@@ -2061,8 +2060,6 @@ Tabs.AutoFarm:AddSlider("Tween Speed",
             Update_Setting(getgenv()['MyName'])
         end
     })
-    --]]
-getgenv().Config["Tween Speed"] = 9999999999999999999
 Tabs.AutoFarm:AddToggle("Auto Destroy", {
     Title = "Auto Destroy",
     Description = "",
@@ -3052,7 +3049,7 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
-                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                    TP1(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
                                 wait(0.4)
                             end
@@ -3064,7 +3061,7 @@ spawn(function()
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             repeat
                                 task.wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
+                                TP1(v.HumanoidRootPart.CFrame * pos)
                             until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
                             wait(0.4)
                         end
@@ -3075,7 +3072,7 @@ spawn(function()
                         if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
                             repeat
                                 task.wait()
-                                TP(v.CFrame)
+                                TP1(v.CFrame)
                             until not getgenv().Config["Auto Farm lnfernal Castle"] or (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 1500 or (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 30
                             wait(0.4)
                         end
