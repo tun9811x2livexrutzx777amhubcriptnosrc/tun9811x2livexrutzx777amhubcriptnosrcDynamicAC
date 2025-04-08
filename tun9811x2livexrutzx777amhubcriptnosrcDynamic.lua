@@ -1926,7 +1926,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -1935,6 +1935,30 @@ spawn(function()
                                 StopTween(getgenv().Config["Auto Farm Rank"])
                                 wait(0.4)
                             end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            repeat
+                                task.wait()
+                                TP1(v.HumanoidRootPart.CFrame * pos)
+                            until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
+                            StopTween(getgenv().Config["Auto Farm Rank"])
+                            wait(0.4)
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            repeat
+                                task.wait()
+                                TP1(v.HumanoidRootPart.CFrame * pos)
+                            until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
+                            StopTween(getgenv().Config["Auto Farm Rank"])
+                            wait(0.4)
                         end
                     end
                 end
