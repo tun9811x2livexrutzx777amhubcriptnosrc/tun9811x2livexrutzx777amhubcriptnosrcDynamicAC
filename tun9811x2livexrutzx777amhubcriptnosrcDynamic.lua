@@ -513,6 +513,9 @@ local Mob = {
     "Heaven",
     "Ika",
     "Zere",
+    "Turtle",
+    "Green",
+    "Sky,"
 }
 AutoFarm:Dropdown({
     Title = "Select Monster",
@@ -1215,6 +1218,78 @@ spawn(function()
         end
     end
 end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm"] and _G['Select Monster'] == "Turtle" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        TP(CFrame.new(-6685.64648, 27.198103, -141.15535, -0.978092015, 3.07949193e-07, 0.208173037, 2.59595623e-07, 1, -2.59595481e-07, -0.208173037, -1.99867472e-07, -0.978092015))
+                        if checkmon == "Turtle" then
+                            if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
+                                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
+                                    repeat
+                                        task.wait()
+                                        TP(v.HumanoidRootPart.CFrame * pos)
+                                    until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Turtle" or v.HealthBar.Enabled == false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm"] and _G['Select Monster'] == "Green" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        TP(CFrame.new(-6932.40723, 27.198103, 223.732361, -0.583505511, 5.93444192e-08, 0.812109172, -2.59595396e-07, 1, -2.59595339e-07, -0.812109172, -3.62295111e-07, -0.583505511))
+                        if checkmon == "Green" then
+                            if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
+                                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
+                                    repeat
+                                        task.wait()
+                                        TP(v.HumanoidRootPart.CFrame * pos)
+                                    until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Green" or v.HealthBar.Enabled == false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm"] and _G['Select Monster'] == "Sky" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        TP(CFrame.new(-7185.33838, 27.198103, -101.641121, 0.985007703, 1.78316697e-07, 0.172510296, -2.5901025e-07, 1, 4.45251118e-07, -0.172510296, -4.83257736e-07, 0.985007703))
+                        if checkmon == "Sky" then
+                            if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
+                                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
+                                    repeat
+                                        task.wait()
+                                        TP(v.HumanoidRootPart.CFrame * pos)
+                                    until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Sky" or v.HealthBar.Enabled == false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
 AutoFarm:Section({
     Title = "Farm Bosses [ ⚔️ ]",
     TextXAlignment = "Left"
@@ -1245,6 +1320,9 @@ local Bosses = {
     "Heaven",
     "Ika",
     "Zere",
+    "Turtle",
+    "Green",
+    "Sky,"
 }
 AutoFarm:Dropdown({
     Title = "Select Bosses",
@@ -1884,6 +1962,78 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Zere" or v.HealthBar.Enabled == false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Bosses"] and _G['Select Bosses'] == "Turtle" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        TP(CFrame.new(-6760.90918, 26.198101, -179.396805, -0.986822009, 2.14169461e-07, 0.161809593, 2.59595481e-07, 1, 2.59595652e-07, -0.161809593, 2.98179714e-07, -0.986822009))
+                        if checkmon == "Turtle" then
+                            if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
+                                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
+                                    repeat
+                                        task.wait()
+                                        TP(v.HumanoidRootPart.CFrame * pos)
+                                    until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Turtle" or v.HealthBar.Enabled == false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Bosses"] and _G['Select Bosses'] == "Green" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        TP(CFrame.new(-6740.77588, 27.198103, 300.906219, -0.990183175, -2.20761933e-07, -0.139775693, -2.59595424e-07, 1, 2.59595254e-07, 0.139775693, 2.93331993e-07, -0.990183175))
+                        if checkmon == "Green" then
+                            if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
+                                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
+                                    repeat
+                                        task.wait()
+                                        TP(v.HumanoidRootPart.CFrame * pos)
+                                    until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Green" or v.HealthBar.Enabled == false
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Bosses"] and _G['Select Bosses'] == "Sky" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        TP(CFrame.new(-7510.0918, 27.198103, -334.95636, 0.314397961, 3.28047292e-07, 0.949291289, -2.59594827e-07, 1, -2.59594941e-07, -0.949291289, -1.64814992e-07, 0.314397961))
+                        if checkmon == "Sky" then
+                            if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
+                                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 650 then
+                                    repeat
+                                        task.wait()
+                                        TP(v.HumanoidRootPart.CFrame * pos)
+                                    until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Sky" or v.HealthBar.Enabled == false
                                 end
                             end
                         end
@@ -3357,6 +3507,40 @@ Location:Button({
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent")
                     :FireServer(unpack(args))
+                game.Players.LocalPlayer.Character.Head:Destroy()
+            else
+                TP(possw)
+            end
+        end)
+    end
+})
+Location:Button({
+    Title = "Teleport to DB World",
+    Callback = function()
+        pcall(function()
+            local possw = CFrame.new(-6295.89209, 27.198103, -73.7149353, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+            if (possw.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1500 then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6295.89209, 27.198103, -73.7149353, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+                    local args = {
+                        [1] = {
+                            [1] = {
+                                ["Event"] = "ChangeSpawn",
+                                ["Spawn"] = "DBWorld"
+                            },
+                            [2] = "\n"
+                        }
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+                    local args = {
+                        [1] = {
+                            [1] = {
+                                ["Event"] = "ChangeSpawn",
+                                ["Spawn"] = "DBWorld"
+                            },
+                            [2] = "\t"
+                        }
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
                 game.Players.LocalPlayer.Character.Head:Destroy()
             else
                 TP(possw)
