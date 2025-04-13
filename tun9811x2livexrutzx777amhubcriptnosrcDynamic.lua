@@ -515,7 +515,7 @@ local Mob = {
     "Zere",
     "Turtle",
     "Green",
-    "Sky,"
+    "Sky",
 }
 AutoFarm:Dropdown({
     Title = "Select Monster",
@@ -1322,7 +1322,7 @@ local Bosses = {
     "Zere",
     "Turtle",
     "Green",
-    "Sky,"
+    "Sky",
 }
 AutoFarm:Dropdown({
     Title = "Select Bosses",
