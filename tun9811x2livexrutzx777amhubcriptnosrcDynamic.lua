@@ -5,69 +5,7 @@ if executor == "Wave" or executor == "AWP" or executor == "Synapse Z" or executo
 or executor == "Fluxus" or executor == "Delta" or executor == "Arceus X" or executor == "Codex" or executor == "Cryptic" or executor == "Krnl"
 then
 print("Executor " .. identifyexecutor())
-local webh =
-"https://discord.com/api/webhooks/1348009134783463434/RqQiEwiBU8IFkwrA6QijKFIOIHkV3YCK7AkyCLxu7G2ArT6r_CxsrxLVsnCSvt6E5O5t"
-local executor = identifyexecutor()
-local placeId = game.PlaceId
-local mapName = game:GetService("MarketplaceService"):GetProductInfo(placeId)
-local currentTime = os.date("%Y-%m-%d %H:%M:%S")
-local player = game.Players.LocalPlayer
-local playerName = player.Name
-local playerDisplayName = player.DisplayName
-local playerPosition = player.Character and player.Character:FindFirstChild("HumanoidRootPart") and player.Character.HumanoidRootPart.Position or "Unknown"
-local clientId = game:GetService('RbxAnalyticsService'):GetClientId()
-local jobId = game.JobId
 
-pcall(function()
-    local data = {
-        ["embeds"] = {
-            {
-                ["title"] = "Game Information",
-                ["description"] = string.format([[
-Executor: %s
-Map: %s
-Time: %s
-Player Name: %s
-Display Name: %s
-Player Position: %s
-Client ID: %s
-Job ID: %s
-]], executor, mapName.Name, currentTime, playerName, playerDisplayName, tostring(playerPosition), clientId, jobId),
-                ["color"] = tonumber(0x7269da)
-            }
-        }
-    }
-    local httpService = game:GetService('HttpService')
-    local response
-    if syn then
-        response = syn.request({
-            Url = webh,
-            Method = 'POST',
-            Headers = {
-                ['Content-Type'] = 'application/json'
-            },
-            Body = httpService:JSONEncode(data),
-        })
-    elseif request then
-        response = request({
-            Url = webh,
-            Method = 'POST',
-            Headers = {
-                ['Content-Type'] = 'application/json'
-            },
-            Body = httpService:JSONEncode(data),
-        })
-    elseif http_request then
-        response = http_request({
-            Url = webh,
-            Method = 'POST',
-            Headers = {
-                ['Content-Type'] = 'application/json'
-            },
-            Body = httpService:JSONEncode(data),
-        })
-    end
-end)
 local webh =
 "https://discord.com/api/webhooks/1348879379186585710/HL6nj5UQrxSgDUzsgWHWhoGUbZCdb5Oj7dMZvrhI8XuBUY53-ImRh9LSylqR_zA7QZT6"
 local httpService = game:GetService('HttpService')
