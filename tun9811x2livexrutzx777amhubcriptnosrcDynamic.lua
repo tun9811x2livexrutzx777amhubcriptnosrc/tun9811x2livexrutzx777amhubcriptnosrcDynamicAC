@@ -462,7 +462,6 @@ AutoFarm:Dropdown({
     Title = "Select Monster",
     Multi = true,
     Value = {getgenv().Config['Select Monster'] or "N/A"},
-    AllowNone = true,
     Values = Mob,
     Callback = function(Value)
         _G['Select Monster'] = Value
@@ -474,7 +473,6 @@ AutoFarm:Dropdown({
     Title = "Choosed Method",
     Multi = false,
     Value = getgenv().Config['Choosed Method'] or "Tween",
-    AllowNone = true,
     Values = {"Tween", "TP"},
     Callback = function(Value)
         _G['Choosed Method'] = Value
@@ -569,9 +567,8 @@ local Bosses = {
 }
 AutoFarm:Dropdown({
     Title = "Select Bosses",
-    Multi = DestroycheckTouchInterest,
+    Multi = true,
     Value = {getgenv().Config['Select Bosses'] or "N/A"},
-    AllowNone = true,
     Values = Bosses,
     Callback = function(Value)
         _G['Select Bosses'] = Value
