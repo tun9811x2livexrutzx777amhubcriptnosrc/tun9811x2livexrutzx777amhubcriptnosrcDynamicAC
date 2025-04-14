@@ -491,6 +491,19 @@ AutoFarm:Toggle({
         StopTween(getgenv().Config["Auto Farm"])
     end
 })
+Dungeons:Slider({
+    Title = "Delay TP",
+    Step = 0,
+    Value = {
+        Min = 0,
+        Max = 1,
+        Default = getgenv().Config["Delay TP"] or 0.5,
+    },
+    Callback = function(Value)
+        getgenv().Config["Delay TP"] = Value
+        Update_Setting(getgenv()['MyName'])
+    end
+})
 local pos = CFrame.new(0, 0, 1.5)
 spawn(function()
     while wait() do
@@ -508,6 +521,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "LongIn" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -534,6 +551,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Anders" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -559,6 +580,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Eminel" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -584,6 +609,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Gonshee" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -609,6 +638,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Largalgan" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -635,6 +668,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Blossom" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -660,6 +697,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Michille" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -685,6 +726,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Genji" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -710,6 +755,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Fyakuya" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -735,6 +784,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Wind" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -760,6 +813,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Red Ant" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -785,6 +842,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Royal Red Ant" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -810,6 +871,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Snake Man" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -836,6 +901,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Shark Man" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -861,6 +930,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Black Crow" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -886,6 +959,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Daek" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -911,6 +988,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Light Admiral" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -936,6 +1017,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Soondoo" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -961,6 +1046,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Sortudo" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -986,6 +1075,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Ant Queen" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1011,6 +1104,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Luryu" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1036,6 +1133,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Diablo" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1061,6 +1162,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Gosuke" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1086,6 +1191,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Golyne" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1112,6 +1221,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Heaven" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1137,6 +1250,13 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Ika" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1162,6 +1282,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Zere" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1186,6 +1310,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Turtle" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1210,6 +1338,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Green" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1234,6 +1366,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm"] or _G['Select Monster'] ~= "Sky" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1314,6 +1450,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "LongIn" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1339,6 +1479,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Soondoo" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1364,6 +1508,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Daek" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1389,6 +1537,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Anders" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1415,6 +1567,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Gonshee" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1440,6 +1596,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Largalgan" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1465,6 +1625,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Blossom" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1490,6 +1654,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Snake Man" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1515,6 +1683,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Black Crow" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1540,6 +1712,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Shark Man" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1565,6 +1741,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Eminel" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1590,6 +1770,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Light Admiral" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1615,6 +1799,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Luryu" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1640,6 +1828,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Fyakuya" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1665,6 +1857,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Genji" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1690,6 +1886,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Sortudo" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1715,6 +1915,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Michille" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1740,6 +1944,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Wind" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1765,6 +1973,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Ant King" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1790,6 +2002,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Golyne" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1815,6 +2031,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Gosuke" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1840,6 +2060,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Diablo" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1865,6 +2089,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Heaven" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1890,6 +2118,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Ika" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1915,6 +2147,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Zere" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1939,6 +2175,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Turtle" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1963,6 +2203,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Green" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -1987,6 +2231,10 @@ spawn(function()
                                         task.wait()
                                         TP(v.HumanoidRootPart.CFrame * pos)
                                     until not getgenv().Config["Auto Farm Bosses"] or _G['Select Bosses'] ~= "Sky" or v.HealthBar.Enabled == false
+                                    if _G['Choosed Method'] == "TP" then
+                                        wait(getgenv().Config["Delay TP"])
+                                    else
+                                    end
                                 end
                             end
                         end
@@ -2074,10 +2322,12 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
-                                    TP1(v.HumanoidRootPart.CFrame * pos)
+                                    TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
-                                StopTween(getgenv().Config["Auto Farm Rank"])
-                                wait(0.4)
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
                             end
                         end
                     end
@@ -2085,24 +2335,32 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            repeat
-                                task.wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
-                            StopTween(getgenv().Config["Auto Farm Rank"])
-                            wait(0.4)
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
                 end
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            repeat
-                                task.wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
-                            StopTween(getgenv().Config["Auto Farm Rank"])
-                            wait(0.4)
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
                 end
@@ -2185,6 +2443,10 @@ spawn(function()
                             task.wait()
                             TP(v.HumanoidRootPart.CFrame * pos)
                         until not getgenv().Config["Auto Farm [ Nearest ]"] or v.HealthBar.Enabled == false
+                        if _G['Choosed Method'] == "TP" then
+                            wait(getgenv().Config["Delay TP"])
+                        else
+                        end
                     end
                 end
             end)
@@ -2778,10 +3040,12 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
-                                    TP1(v.HumanoidRootPart.CFrame * pos)
+                                    TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                StopTween(getgenv().Config["Auto Farm Dungeon"])
-                                wait(0.4)
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
                             end
                         end
                     end
@@ -2789,24 +3053,31 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            repeat
-                                task.wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                            StopTween(getgenv().Config["Auto Farm Dungeon"])
-                            wait(0.4)
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
-                end
-                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                end                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            repeat
-                                task.wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                            StopTween(getgenv().Config["Auto Farm Dungeon"])
-                            wait(0.4)
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
                 end
@@ -2824,10 +3095,12 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
-                                    TP1(v.HumanoidRootPart.CFrame * pos)
+                                    TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                StopTween(getgenv().Config["Auto Farm Dungeon"])
-                                wait(0.4)
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
                             end
                         end
                     end
@@ -2835,24 +3108,31 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            repeat
-                                task.wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                            StopTween(getgenv().Config["Auto Farm Dungeon"])
-                            wait(0.4)
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
-                end
-                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                end                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            repeat
-                                task.wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                            StopTween(getgenv().Config["Auto Farm Dungeon"])
-                            wait(0.4)
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
                 end
@@ -3026,9 +3306,12 @@ spawn(function()
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
-                                    TP1(v.HumanoidRootPart.CFrame * pos)
+                                    TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                                wait(0.4)
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
                             end
                         end
                     end
@@ -3036,22 +3319,32 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            repeat
-                                task.wait()
-                                TP1(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                            wait(0.4)
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
                 end
-                for i, v in pairs(game.workspace.__Main.__World:GetDescendants()) do
-                    if v.Name == "FirePortal" then
-                        if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
-                            repeat
-                                task.wait()
-                                TP1(v.CFrame)
-                            until not getgenv().Config["Auto Farm lnfernal Castle"] or (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 1500 or (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 30
-                            wait(0.4)
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
+                                if _G['Choosed Method'] == "TP" then
+                                    wait(getgenv().Config["Delay TP"])
+                                else
+                                end
+                            end
                         end
                     end
                 end
