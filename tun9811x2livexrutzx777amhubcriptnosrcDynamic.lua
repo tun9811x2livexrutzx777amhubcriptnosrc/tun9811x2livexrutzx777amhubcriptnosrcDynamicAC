@@ -200,7 +200,7 @@ end
 --]]
 function TP(Pos)
     local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-    local tweenInfo = TweenInfo.new(Distance / getgenv().Config["Tween Speed"], Enum.EasingStyle.Linear)
+    local tweenInfo = TweenInfo.new(Distance / 350, Enum.EasingStyle.Linear)
     local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,
         tweenInfo, {
             CFrame = Pos
@@ -216,17 +216,19 @@ function TP(Pos)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
     end
     tween:Play()
+    if _G['Choosed Method'] == "TP" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
+    end
 end
 
 --[[]
 function TP(Pos)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  Pos
 end
---]]
 function TP1(Pos)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
 end
-
+--]]
 function StopTween(target)
     if not target then
         _G.StopTween = true
@@ -464,6 +466,18 @@ AutoFarm:Dropdown({
     Callback = function(Value)
         _G['Select Monster'] = Value
         getgenv().Config['Select Monster'] = Value
+        Update_Setting(getgenv()['MyName'])
+    end
+})
+AutoFarm:Dropdown({
+    Title = "Choosed Method",
+    Multi = false,
+    Value = getgenv().Config['Choosed Method'] or "N/A",
+    AllowNone = true,
+    Values = {"Tween", "TP"},
+    Callback = function(Value)
+        _G['Choosed Method'] = Value
+        getgenv().Config['Choosed Method'] = Value
         Update_Setting(getgenv()['MyName'])
     end
 })
@@ -2179,19 +2193,6 @@ end)
 AutoFarm:Section({
     Title = "Settings [ ⚙️ ]",
     TextXAlignment = "Left"
-})
-AutoFarm:Slider({
-    Title = "Tween Speed",
-    Step = 1,
-    Value = {
-        Min = 200,
-        Max = 1000,
-        Default = getgenv().Config["Tween Speed"] or 250,
-    },
-    Callback = function(Value)
-        getgenv().Config["Tween Speed"] = Value
-        Update_Setting(getgenv()['MyName'])
-    end
 })
 AutoFarm:Toggle({
     Title = "Auto Destroy",
