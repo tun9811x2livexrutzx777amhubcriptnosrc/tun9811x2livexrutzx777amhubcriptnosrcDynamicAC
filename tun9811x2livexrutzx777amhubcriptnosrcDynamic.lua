@@ -199,6 +199,7 @@ tween:Play()
 end
 --]]
 function TP(Pos)
+    if _G['Choosed Method'] == "Tween" then
     local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     local tweenInfo = TweenInfo.new(Distance / 350, Enum.EasingStyle.Linear)
     local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,
@@ -216,7 +217,7 @@ function TP(Pos)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
     end
     tween:Play()
-    if _G['Choosed Method'] == "TP" then
+    elseif _G['Choosed Method'] == "TP" then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
     end
 end
