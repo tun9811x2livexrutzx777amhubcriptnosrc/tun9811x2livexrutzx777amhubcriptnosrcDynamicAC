@@ -462,7 +462,7 @@ AutoFarm:Dropdown({
     Title = "Select Monster",
     Multi = false,
     Value = getgenv().Config['Select Monster'] or "N/A",
-    AllowNone = true,
+    AllowNone = false,
     Values = Mob,
     Callback = function(Value)
         _G['Select Monster'] = Value
