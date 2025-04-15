@@ -490,12 +490,14 @@ spawn(function()
                             if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                     if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
-                                        repeat
-                                            task.wait()
-                                            TP(v.HumanoidRootPart.CFrame * pos)
-                                        until not getgenv().Config["Auto Farm"] or v.HealthBar.Enabled == false
-                                        if _G['Choosed Method'] == "TP" then
-                                            wait(getgenv().Config["Delay TP"])
+                                        if v.HealthBar.Enabled == true then
+                                            repeat
+                                                task.wait()
+                                                TP(v.HumanoidRootPart.CFrame * pos)
+                                            until not getgenv().Config["Auto Farm"] or v.HealthBar.Enabled == false
+                                            if _G['Choosed Method'] == "TP" then
+                                                wait(getgenv().Config["Delay TP"])
+                                            end
                                         end
                                     end
                                 end
@@ -574,12 +576,14 @@ spawn(function()
                             if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
                                     if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
-                                        repeat
-                                            task.wait()
-                                            TP(v.HumanoidRootPart.CFrame * pos)
-                                        until not getgenv().Config["Auto Farm Bosses"] or v.HealthBar.Enabled == false
-                                        if _G['Choosed Method'] == "TP" then
-                                            wait(getgenv().Config["Delay TP"])
+                                        if v.HealthBar.Enabled == true then
+                                            repeat
+                                                task.wait()
+                                                TP(v.HumanoidRootPart.CFrame * pos)
+                                            until not getgenv().Config["Auto Farm Bosses"] or v.HealthBar.Enabled == false
+                                            if _G['Choosed Method'] == "TP" then
+                                                wait(getgenv().Config["Delay TP"])
+                                            end
                                         end
                                     end
                                 end
@@ -640,7 +644,7 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
@@ -656,7 +660,7 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
@@ -1523,7 +1527,7 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
@@ -1538,7 +1542,7 @@ spawn(function()
                 end                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
@@ -1578,7 +1582,7 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
@@ -1593,7 +1597,7 @@ spawn(function()
                 end                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
@@ -1791,7 +1795,7 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
@@ -1807,7 +1811,7 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
-                            if v.HealthBar.Enabled == true then
+                            if v.HealthBar.Enabled == false then
                                 repeat
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
