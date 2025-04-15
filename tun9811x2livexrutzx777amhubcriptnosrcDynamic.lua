@@ -200,23 +200,23 @@ end
 --]]
 function TP(Pos)
     if _G['Choosed Method'] == "Tween" then
-    local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-    local tweenInfo = TweenInfo.new(Distance / 350, Enum.EasingStyle.Linear)
-    local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,
-        tweenInfo, {
-            CFrame = Pos
-        })
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X, Pos.Y,
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
-    if BypassTP and Distance >= 1000 then
-        game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
-        task.wait()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
-    end
-    tween:Play()
+        local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+        local tweenInfo = TweenInfo.new(Distance / 350, Enum.EasingStyle.Linear)
+        local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,
+            tweenInfo, {
+                CFrame = Pos
+            })
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X, Pos.Y,
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
+        if BypassTP and Distance >= 1000 then
+            game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
+            task.wait()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
+        end
+        tween:Play()
     elseif _G['Choosed Method'] == "TP" then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
     end
@@ -227,7 +227,7 @@ function TP(Pos)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  Pos
 end
 function TP1(Pos)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
 end
 --]]
 function StopTween(target)
@@ -284,14 +284,14 @@ end
 spawn(function()
 while wait() do
 if isAutoEnabled() then
-    local hrp = Players.LocalPlayer.Character.HumanoidRootPart
-    if not hrp:FindFirstChild("BodyClip") then
-        local Noclip = Instance.new("BodyVelocity")
-        Noclip.Name = "BodyClip"
-        Noclip.Parent = hrp
-        Noclip.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-        Noclip.Velocity = Vector3.new(0, 0, 0)
-    end
+local hrp = Players.LocalPlayer.Character.HumanoidRootPart
+if not hrp:FindFirstChild("BodyClip") then
+    local Noclip = Instance.new("BodyVelocity")
+    Noclip.Name = "BodyClip"
+    Noclip.Parent = hrp
+    Noclip.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+    Noclip.Velocity = Vector3.new(0, 0, 0)
+end
 end
 end
 end)
@@ -369,62 +369,32 @@ ImageButton.MouseButton1Down:Connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true, "RightControl", false, game)
     game:GetService("VirtualInputManager"):SendKeyEvent(false, "RightControl", false, game)
 end)
-local WindUI = loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI"))()
-local Window = WindUI:CreateWindow({
-    Title = "Arise Crossover - Dynamic Hub", -- UI Title
-    Icon = "door-open",              -- Url or rbxassetid or lucide
-    Author = "By x2Livex",           -- Author & Creator
-    Folder = "Dynamic Hub",          -- Folder name for saving data (And key)
-    Size = UDim2.fromOffset(620, 420), -- UI Size
-    Transparent = true,              -- UI Transparency
-    Theme = "Dark",                  -- UI Theme
-    SideBarWidth = 165,              -- UI Sidebar Width (number)
-    HasOutline = false,              -- Adds Oultines to the window
+local Window = Fluent:CreateWindow({
+    Title = "Arise Crossover - Dynamic Hub",
+    SubTitle = "By x2Livex",
+    TabWidth = 110,
+    Size = UDim2.fromOffset(620, 420),
+    --[[
+Acrylic = true,
+--]]
+    Theme = "Lua Theme",
+    MinimizeKey = Enum.KeyCode.RightControl
 })
-Window:EditOpenButton({
-    Title = "Open UI Button",
-    Icon = "image-upscale", -- New icon
-    CornerRadius = UDim.new(0, 10),
-    StrokeThickness = 3,
-    Color = ColorSequence.new(
-        Color3.fromHex("FF0F7B"),
-        Color3.fromHex("F89B29")
-    )
-})
-local AutoFarm = Window:Tab({
-    Title = "Auto Farm",
-    Icon = "swords",
-})
-local Dungeons = Window:Tab({
-    Title = "Dungeons",
-    Icon = "shield",
-})
-local Location = Window:Tab({
-    Title = "Location",
-    Icon = "compass",
-})
-local Shop = Window:Tab({
-    Title = "Shop",
-    Icon = "shopping-cart",
-})
-local Miscellaneous = Window:Tab({
-    Title = "Miscellaneous",
-    Icon = "fingerprint",
-})
-b = Window:Divider()
-local WindowTab = Window:Tab({
-    Title = "Window and File Configuration",
-    Icon = "settings",
-})
-local CreateThemeTab = Window:Tab({
-    Title = "Create theme",
-    Icon = "palette",
-})
-Window:Divider()
-AutoFarm:Section({
-    Title = "Farm Monster [ ⚔️ ]",
-    TextXAlignment = "Left"
-})
+local Tabs = {
+    AutoFarm = Window:AddTab({ Title = "Auto Farm", Icon = "swords" }),
+    Dungeons = Window:AddTab({ Title = "Dungeons", Icon = "shield" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "map-pin" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
+    Miscellaneous = Window:AddTab({ Title = "Miscellaneous", Icon = "fingerprint" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+local Options = Fluent.Options
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local humanoidRootPart = Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+Tabs.AutoFarm:AddSection("Farm Monster")
 local Mob = {
     "LongIn",
     "Anders",
@@ -458,48 +428,54 @@ local Mob = {
     "Green",
     "Sky",
 }
-AutoFarm:Dropdown({
+local ChoosedMob = Tabs.AutoFarm:AddDropdown("Select Monster", {
     Title = "Select Monster",
-    Multi = true,
-    Value = {getgenv().Config['Select Monster'] or "N/A"},
+    Description = "",
     Values = Mob,
-    Callback = function(Value)
-        _G['Select Monster'] = Value
-        getgenv().Config['Select Monster'] = Value
-        Update_Setting(getgenv()['MyName'])
-    end
+    Multi = true,
+    Default = {getgenv().Config["Select Monster"] or "N/A"},
 })
-AutoFarm:Dropdown({
+if getgenv().Config["Select Monster"] then
+    ChoosedMob:SetValue(getgenv().Config["Select Monster"])
+end
+ChoosedMob:OnChanged(function(Value)
+    _G['Select Monster'] = Value
+    getgenv().Config["Select Monster"] = Value
+    Update_Setting(getgenv()['MyName'])
+end)
+local ChoosedMethod = Tabs.AutoFarm:AddDropdown("Choosed Method", {
     Title = "Choosed Method",
+    Description = "",
+    Values = { "Tween", "TP" },
     Multi = false,
-    Value = getgenv().Config['Choosed Method'] or "Tween",
-    Values = {"Tween", "TP"},
-    Callback = function(Value)
-        _G['Choosed Method'] = Value
-        getgenv().Config['Choosed Method'] = Value
-        Update_Setting(getgenv()['MyName'])
-    end
+    Default = getgenv().Config['Choosed Method'] or "Tween",
 })
-AutoFarm:Toggle({
+ChoosedMethod:OnChanged(function(Value)
+    _G['Choosed Method'] = Value
+    getgenv().Config["Choosed Method"] = Value
+    Update_Setting(getgenv()['MyName'])
+end)
+Tabs.AutoFarm:AddSlider("Delay TP",
+    {
+        Title = "Delay TP",
+        Description = "",
+        Default = getgenv().Config["Delay TP"] or 0.5,
+        Min = 0,
+        Max = 1,
+        Rounding = 1,
+        Callback = function(Value)
+            getgenv().Config["Delay TP"] = Value
+            Update_Setting(getgenv()['MyName'])
+        end
+    })
+Tabs.AutoFarm:AddToggle("Auto Farm", {
     Title = "Auto Farm",
-    Value = getgenv().Config["Auto Farm"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Farm"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Farm"] = Value
         Update_Setting(getgenv()['MyName'])
         StopTween(getgenv().Config["Auto Farm"])
-    end
-})
-AutoFarm:Slider({
-    Title = "Delay TP",
-    Step = 0.1,
-    Value = {
-        Min = 0,
-        Max = 1,
-        Default = getgenv().Config["Delay TP"] or 0.5,
-    },
-    Callback = function(Value)
-        getgenv().Config["Delay TP"] = Value
-        Update_Setting(getgenv()['MyName'])
     end
 })
 local pos = CFrame.new(0, 0, 1.5)
@@ -510,8 +486,8 @@ spawn(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         local checkmon = v.HealthBar.Main.Title.Text
-                        for _, selected in pairs(_G['Select Monster'] or {}) do
-                            if checkmon == selected then
+                        for selectedName, isSelected in pairs(_G['Select Monster'] or {}) do
+                            if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
                                     if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
                                         repeat
@@ -531,10 +507,7 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Section({
-    Title = "Farm Bosses [ ⚔️ ]",
-    TextXAlignment = "Left"
-})
+Tabs.AutoFarm:AddSection("Farm Bosses")
 local Bosses = {
     "LongIn",
     "Soondoo",
@@ -565,20 +538,25 @@ local Bosses = {
     "Green",
     "Sky",
 }
-AutoFarm:Dropdown({
+local ChoosedBoss = Tabs.AutoFarm:AddDropdown("Select Bosses", {
     Title = "Select Bosses",
-    Multi = true,
-    Value = {getgenv().Config['Select Bosses'] or "N/A"},
+    Description = "",
     Values = Bosses,
-    Callback = function(Value)
-        _G['Select Bosses'] = Value
-        getgenv().Config['Select Bosses'] = Value
-        Update_Setting(getgenv()['MyName'])
-    end
+    Multi = true,
+    Default = {getgenv().Config["Select Bosses"] or "N/A"},
 })
-AutoFarm:Toggle({
+if getgenv().Config["Select Bosses"] then
+    ChoosedBoss:SetValue(getgenv().Config["Select Bosses"])
+end
+ChoosedBoss:OnChanged(function(Value)
+    _G['Select Bosses'] = Value
+    getgenv().Config["Select Bosses"] = Value
+    Update_Setting(getgenv()['MyName'])
+end)
+Tabs.AutoFarm:AddToggle("Auto Farm Bosses", {
     Title = "Auto Farm Bosses",
-    Value = getgenv().Config["Auto Farm  Bosses"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Farm Bosses"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Farm Bosses"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -587,19 +565,19 @@ AutoFarm:Toggle({
 })
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm"] and _G['Select Bosses'] then
+        if getgenv().Config["Auto Farm Bosses"] and _G['Select Bosses'] then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
                         local checkmon = v.HealthBar.Main.Title.Text
-                        for _, selected in pairs(_G['Select Bosses'] or {}) do
-                            if checkmon == selected then
+                        for selectedName, isSelected in pairs(_G['Select Bosses'] or {}) do
+                            if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
-                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999 then
+                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
                                         repeat
                                             task.wait()
                                             TP(v.HumanoidRootPart.CFrame * pos)
-                                        until not getgenv().Config["Auto Farm"] or v.HealthBar.Enabled == false
+                                        until not getgenv().Config["Auto Farm Bosses"] or v.HealthBar.Enabled == false
                                         if _G['Choosed Method'] == "TP" then
                                             wait(getgenv().Config["Delay TP"])
                                         end
@@ -613,49 +591,9 @@ spawn(function()
         end
     end
 end)
---[[]
-spawn(function()
-while wait() do
-if getgenv().Config["Auto Farm"] or getgenv().Config["Auto Farm Bosses"] or getgenv().Config["Auto Farm [ Nearest ]"] or getgenv().Config["Auto Farm Dungeon"] then
-    pcall(function()
-        for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
-            if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                v.Hitbox.Size = Vector3.new(20, 20, 20)
-            end
-        end
-        for i, v in pairs(game.workspace.__Main.__Enemies.Server["1"]:GetChildren()) do
-            if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999999999999 then
-                v.Size = Vector3.new(20, 20, 20)
-            end
-        end
-        for i, v in pairs(game.workspace.__Main.__Enemies.Server["2"]:GetChildren()) do
-            if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999999999999 then
-                v.Size = Vector3.new(20, 20, 20)
-            end
-        end
-        for i, v in pairs(game.workspace.__Main.__Enemies.Server["3"]:GetChildren()) do
-            if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999999999999 then
-                v.Size = Vector3.new(20, 20, 20)
-            end
-        end
-        for i, v in pairs(game.workspace.__Main.__Enemies.Server["4"]:GetChildren()) do
-            if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999999999999 then
-                v.Size = Vector3.new(20, 20, 20)
-            end
-        end
-        for i, v in pairs(game.workspace.__Main.__Enemies.Server["5"]:GetChildren()) do
-            if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 9999999999999999 then
-                v.Size = Vector3.new(20, 20, 20)
-            end
-        end
-    end)
-end
-end
-end)
---]]
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm"] or getgenv().Config["Auto Farm Bosses"] or getgenv().Config["Auto Farm [ Nearest ]"] or getgenv().Config["Auto Farm Dungeon"] or getgenv().Config["Auto Farm Rank"] or getgenv().Config["Auto Farm lnfernal Castle"] then
+        if getgenv().Config["Auto Farm"] or getgenv().Config["Auto Farm Bosses"] or getgenv().Config["Auto Farm [ Nearest ]"] or getgenv().Config["Auto Farm Dungeon"] or getgenv().Config["Auto Farm Rank"] then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetDescendants()) do
                     if v:IsA("BasePart") and v:FindFirstChild("HealthBar") then
@@ -668,13 +606,11 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Section({
-    Title = "Rank [ 🔥 ]",
-    TextXAlignment = "Left"
-})
-AutoFarm:Toggle({
+Tabs.AutoFarm:AddSection("Rank")
+Tabs.AutoFarm:AddToggle("Auto Farm Rank", {
     Title = "Auto Farm Rank",
-    Value = getgenv().Config["Auto Farm Rank"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Farm Rank"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Farm Rank"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -737,9 +673,10 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Toggle({
+Tabs.AutoFarm:AddToggle("Auto Join Rank", {
     Title = "Auto Join Rank",
-    Value = getgenv().Config["Auto Join Rank"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Join Rank"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Join Rank"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -776,59 +713,71 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Section({
-    Title = "Farm Nearest [ ⚔️ ]",
-    TextXAlignment = "Left"
-})
-AutoFarm:Toggle({
-    Title = "Auto Farm [ Nearest ]",
-    Value = getgenv().Config["Auto Farm [ Nearest ]"] or false,
+Tabs.AutoFarm:AddSection("Farm Nearest")
+Tabs.AutoFarm:AddToggle("Auto Farm [ Nearest ]", {
+    Title = "Auto Farm Nearest",
+    Description = "",
+    Default = getgenv().Config["Auto Farm [ Nearest ]"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Farm [ Nearest ]"] = Value
         Update_Setting(getgenv()['MyName'])
         StopTween(getgenv().Config["Auto Farm [ Nearest ]"])
     end
 })
-AutoFarm:Slider({
-    Title = "Distance",
-    Step = 1,
-    Value = {
+Tabs.AutoFarm:AddSlider("Distance",
+    {
+        Title = "Distance",
+        Description = "",
+        Default = getgenv().Config["Distance"] or 200,
         Min = 50,
         Max = 1000,
-        Default = getgenv().Config["Distance"] or 200,
-    },
-    Callback = function(Value)
-        getgenv().Config["Distance"] = Value
-        Update_Setting(getgenv()['MyName'])
-    end
-})
-spawn(function()
-    while wait() do
-        if getgenv().Config["Auto Farm [ Nearest ]"] then
-            pcall(function()
-                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
-                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= getgenv().Config["Distance"] then
-                        repeat
-                            task.wait()
-                            TP(v.HumanoidRootPart.CFrame * pos)
-                        until not getgenv().Config["Auto Farm [ Nearest ]"] or v.HealthBar.Enabled == false
-                        if _G['Choosed Method'] == "TP" then
-                            wait(getgenv().Config["Delay TP"])
-                        else
+        Rounding = 0,
+        Callback = function(Value)
+            getgenv().Config["Distance"] = Value
+            Update_Setting(getgenv()['MyName'])
+        end
+    })
+    spawn(function()
+        while wait() do
+            if getgenv().Config["Auto Farm [ Nearest ]"] then
+                pcall(function()
+                    for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= getgenv().Config["Distance"] then
+                            repeat
+                                task.wait()
+                                TP(v.HumanoidRootPart.CFrame * pos)
+                            until not getgenv().Config["Auto Farm [ Nearest ]"] or v.HealthBar.Enabled == false
+                            if _G['Choosed Method'] == "TP" then
+                                wait(getgenv().Config["Delay TP"])
+                            else
+                            end
                         end
                     end
-                end
-            end)
+                end)
+            end
         end
-    end
-end)
-AutoFarm:Section({
-    Title = "Settings [ ⚙️ ]",
-    TextXAlignment = "Left"
+    end)
+Tabs.AutoFarm:AddSection("Settings")
+--[[]
+Tabs.AutoFarm:AddSlider("Tween Speed",
+{
+Title = "Tween Speed",
+Description = "",
+Default = getgenv().Config["Tween Speed"] or 200,
+Min = 200,
+Max = 1000,
+Rounding = 0,
+Callback = function(Value)
+getgenv().Config["Tween Speed"] = Value
+Update_Setting(getgenv()['MyName'])
+end
 })
-AutoFarm:Toggle({
+--]]
+getgenv().Config["Tween Speed"] = 9999999999999999999
+Tabs.AutoFarm:AddToggle("Auto Destroy", {
     Title = "Auto Destroy",
-    Value = getgenv().Config["Auto Destroy"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Destroy"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Destroy"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -852,9 +801,10 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Toggle({
+Tabs.AutoFarm:AddToggle("Auto Arise", {
     Title = "Auto Arise",
-    Value = getgenv().Config["Auto Arise"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Arise"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Arise"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -878,9 +828,161 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Toggle({
+--[[]
+Tabs.AutoFarm:AddToggle("Auto Equip Best", {
+Title = "Auto Equip Best",
+Description = "",
+Default = getgenv().Config["Auto Equip Best"] or false,
+Callback = function(Value)
+getgenv().Config["Auto Equip Best"] = Value
+Update_Setting(getgenv()['MyName'])
+end
+})
+spawn(function()
+while wait() do
+if getgenv().Config["Auto Equip Best"] then
+pcall(function()
+for i,v in pairs(game:GetService("Players").LocalPlayer.leaderstats.Inventory.Pets:GetChildren()) do
+for i = 1, 20 do
+local args = {
+[1] = {
+[1] = {
+["Event"] = "EquipBest",
+["Pets"] = {
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+
+}
+},
+[2] = "\5"
+}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+local args = {
+[1] = {
+[1] = {
+["Event"] = "EquipBest",
+["Pets"] = {
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+
+}
+},
+[2] = "\4"
+}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+local args = {
+[1] = {
+[1] = {
+["Event"] = "EquipBest",
+["Pets"] = {
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+
+}
+},
+[2] = "\n"
+}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+local args = {
+[1] = {
+[1] = {
+["Event"] = "EquipBest",
+["Pets"] = {
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+[i] = v.Name,
+
+}
+},
+[2] = "\t"
+}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+end
+end
+end)
+end
+end
+end)
+--]]
+Tabs.AutoFarm:AddToggle("Auto Send Pet Attack", {
     Title = "Auto Send Pet Attack",
-    Value = getgenv().Config["Auto Send Pet Attack"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Send Pet Attack"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Send Pet Attack"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -889,7 +991,7 @@ AutoFarm:Toggle({
 local checkcccccc
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Send Pet Attack"] then
+        if getgenv().Config["Auto Send Pet Attack"] and not getgenv().Config["Enabled Fast Pet Attack"] then
             pcall(function()
                 for i, v in pairs(game:GetService("Players").LocalPlayer.leaderstats.Inventory.Pets:GetChildren()) do
                     for i, v2 in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
@@ -1080,9 +1182,10 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Toggle({
+Tabs.AutoFarm:AddToggle("Enabled Fast Pet Attack", {
     Title = "Enabled Fast Pet Attack",
-    Value = getgenv().Config["Enabled Fast Pet Attack"] or false,
+    Description = "",
+    Default = getgenv().Config["Enabled Fast Pet Attack"] or false,
     Callback = function(Value)
         getgenv().Config["Enabled Fast Pet Attack"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1279,9 +1382,10 @@ spawn(function()
         end
     end
 end)
-AutoFarm:Toggle({
+Tabs.AutoFarm:AddToggle("Auto Punch", {
     Title = "Auto Punch",
-    Value = getgenv().Config["Auto Punch"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Punch"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Punch"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1377,7 +1481,6 @@ spawn(function()
                                 }
                                 game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild(
                                     "dataRemoteEvent"):FireServer(unpack(args))
-                                Click()
                             end
                         end
                     end
@@ -1386,13 +1489,11 @@ spawn(function()
         end
     end
 end)
-Dungeons:Section({
-    Title = "Dungeons [ 👑 ]",
-    TextXAlignment = "Left"
-})
-Dungeons:Toggle({
+Tabs.Dungeons:AddSection("Dungeons")
+Tabs.Dungeons:AddToggle("Auto Farm Dungeon", {
     Title = "Auto Farm Dungeon",
-    Value = getgenv().Config["Auto Farm Dungeon"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Farm Dungeon"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Farm Dungeon"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1509,9 +1610,10 @@ spawn(function()
         end
     end
 end)
-Dungeons:Toggle({
+Tabs.Dungeons:AddToggle("Enabled Instant Leave Dungeon", {
     Title = "Enabled Instant Leave Dungeon",
-    Value = getgenv().Config["Enabled Instant Leave Dungeon"] or false,
+    Description = "",
+    Default = getgenv().Config["Enabled Instant Leave Dungeon"] or false,
     Callback = function(Value)
         getgenv().Config["Enabled Instant Leave Dungeon"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1583,9 +1685,10 @@ function autoStartDungeon()
     end
 end
 
-Dungeons:Toggle({
+Tabs.Dungeons:AddToggle("Auto Join Dungeon", {
     Title = "Auto Join Dungeon",
-    Value = getgenv().Config["Auto Join Dungeon"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Join Dungeon"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Join Dungeon"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1598,9 +1701,10 @@ spawn(function()
         end
     end
 end)
-Dungeons:Toggle({
+Tabs.Dungeons:AddToggle("Auto Rejoin Dungeon", {
     Title = "Auto Rejoin Dungeon",
-    Value = getgenv().Config["Auto Rejoin Dungeon"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Rejoin Dungeon"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Rejoin Dungeon"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1634,31 +1738,30 @@ spawn(function()
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent")
                     :FireServer(unpack(args))
-                autoStartDungeon()
+                startDungeon()
+                pcall(autoStartDungeon)
             end)
         end
     end
 end)
-Dungeons:Section({
-    Title = "lnfernal Castle [ 🔥 ]",
-    TextXAlignment = "Left"
-})
-Dungeons:Slider({
-    Title = "Choose Room",
-    Step = 1,
-    Value = {
+Tabs.Dungeons:AddSection("lnfernal Castle")
+Tabs.Dungeons:AddSlider("Choose Room",
+    {
+        Title = "Choose Room",
+        Description = "",
+        Default = getgenv().Config["Choose Room"] or 25,
         Min = 1,
         Max = 100,
-        Default = getgenv().Config["Choose Room"] or 25,
-    },
-    Callback = function(Value)
-        getgenv().Config["Choose Room"] = Value
-        Update_Setting(getgenv()['MyName'])
-    end
-})
-Dungeons:Toggle({
+        Rounding = 0,
+        Callback = function(Value)
+            getgenv().Config["Choose Room"] = Value
+            Update_Setting(getgenv()['MyName'])
+        end
+    })
+Tabs.Dungeons:AddToggle("Auto Farm lnfernal Castle", {
     Title = "Auto Farm lnfernal Castle",
-    Value = getgenv().Config["Auto Farm lnfernal Castle"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Farm lnfernal Castle"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Farm lnfernal Castle"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1735,9 +1838,10 @@ spawn(function()
         end
     end
 end)
-Dungeons:Toggle({
+Tabs.Dungeons:AddToggle("Auto Join lnfernal Castle", {
     Title = "Auto Join lnfernal Castle",
-    Value = getgenv().Config["Auto Join lnfernal Castle"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Join lnfernal Castle"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Join lnfernal Castle"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1771,9 +1875,10 @@ spawn(function()
         end
     end
 end)
-Dungeons:Toggle({
+Tabs.Dungeons:AddToggle("Auto Leave", {
     Title = "Auto Leave",
-    Value = getgenv().Config["Auto Leave"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Leave"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Leave"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1795,13 +1900,11 @@ spawn(function()
         end
     end
 end)
-Dungeons:Section({
-    Title = "Settings [ ⚙️ ]",
-    TextXAlignment = "Left"
-})
-Dungeons:Toggle({
+Tabs.Dungeons:AddSection("Settings")
+Tabs.Dungeons:AddToggle("Auto Destroy Dungeon", {
     Title = "Auto Destroy Dungeon",
-    Value = getgenv().Config["Auto Destroy Dungeon"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Destroy Dungeon"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Destroy Dungeon"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1825,9 +1928,10 @@ spawn(function()
         end
     end
 end)
-Dungeons:Toggle({
+Tabs.Dungeons:AddToggle("Auto Arise Dungeon", {
     Title = "Auto Arise Dungeon",
-    Value = getgenv().Config["Auto Arise Dungeon"] or false,
+    Description = "",
+    Default = getgenv().Config["Auto Arise Dungeon"] or false,
     Callback = function(Value)
         getgenv().Config["Auto Arise Dungeon"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -1851,8 +1955,9 @@ spawn(function()
         end
     end
 end)
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to Solo World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(577.961914, 28.434576, 261.457123, 1, 2.59595481e-07, 7.27989835e-10,
@@ -1890,8 +1995,9 @@ Location:Button({
         end)
     end
 })
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to Naruto World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(-3380.23608, 30.2604809, 2257.25879, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -1927,8 +2033,9 @@ Location:Button({
         end)
     end
 })
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to OP World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(-2851.12256, 49.3989372, -2011.39355, 0.740045071, 0, 0.672557294, 0, 1, 0,
@@ -1965,8 +2072,9 @@ Location:Button({
         end)
     end
 })
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to Bleach World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(2641.79614, 45.4265251, -2645.07544, 0.780932724, 0, -0.624615133, 0, 1, 0,
@@ -2003,8 +2111,9 @@ Location:Button({
         end)
     end
 })
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to BC World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(198.339813, 38.7076759, 4296.1123, 0.993158996, 6.24933818e-07, -0.116769925,
@@ -2042,8 +2151,9 @@ Location:Button({
         end)
     end
 })
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to Chainsaw World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(236.932678, 32.8960915, -4301.60547, 0, 0, 1, 0, 1, 0, -1, 0, 0)
@@ -2079,8 +2189,9 @@ Location:Button({
         end)
     end
 })
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to Jojo World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(4816.31641, 29.9423389, -120.22998, 0, 0, 1, 0, 1, 0, -1, 0, 0)
@@ -2116,8 +2227,9 @@ Location:Button({
         end)
     end
 })
-Location:Button({
+Tabs.Teleport:AddButton({
     Title = "Teleport to DB World",
+    Description = "",
     Callback = function()
         pcall(function()
             local possw = CFrame.new(-6295.89209, 27.198103, -73.7149353, 0, 0, 1, 0, 1, 0, -1, 0, 0)
@@ -2150,28 +2262,26 @@ Location:Button({
         end)
     end
 })
-Shop:Section({
-    Title = "Weapons [ ⚔️ ]",
-    TextXAlignment = "Left"
-})
+Tabs.Shop:AddSection("Weapons")
 local Weapons = {}
 for i, v in pairs(game:GetService("ReplicatedStorage").__Assets.__Weapons:GetChildren()) do
     table.insert(Weapons, v.Name)
 end
-Shop:Dropdown({
+local ChoosedBoss = Tabs.Shop:AddDropdown("Select Weapons", {
     Title = "Select Weapons",
-    Multi = false,
-    Value = getgenv().Config['Select Weapons'] or "N/A",
-    AllowNone = true,
+    Description = "",
     Values = Weapons,
-    Callback = function(Value)
-        _G['Select Weapons'] = Value
-        getgenv().Config['Select Weapons'] = Value
-        Update_Setting(getgenv()['MyName'])
-    end
+    Multi = false,
+    Default = getgenv().Config["Select Weapons"] or "N/A",
 })
-Shop:Button({
+ChoosedBoss:OnChanged(function(Value)
+    _G['Select Weapons'] = Value
+    getgenv().Config["Select Weapons"] = Value
+    Update_Setting(getgenv()['MyName'])
+end)
+Tabs.Shop:AddButton({
     Title = "Buy Weapons",
+    Description = "",
     Callback = function()
         local args = {
             [1] = {
@@ -2201,13 +2311,11 @@ Shop:Button({
             unpack(args))
     end
 })
-Miscellaneous:Section({
-    Title = "Local Player [ ⚙️ ]",
-    TextXAlignment = "Left"
-})
-Miscellaneous:Toggle({
+Tabs.Miscellaneous:AddSection("Local Player")
+Tabs.Miscellaneous:AddToggle("Hide Name", {
     Title = "Hide Name",
-    Value = getgenv().Config["Hide Name"] or false,
+    Description = "",
+    Default = getgenv().Config["Hide Name"] or false,
     Callback = function(Value)
         getgenv().Config["Hide Name"] = Value
         Update_Setting(getgenv()['MyName'])
@@ -2218,18 +2326,17 @@ Miscellaneous:Toggle({
         end
     end
 })
-Miscellaneous:Section({
-    Title = "Server [ ⚙️ ]",
-    TextXAlignment = "Left"
-})
-Miscellaneous:Button({
+Tabs.Miscellaneous:AddSection("Server")
+Tabs.Miscellaneous:AddButton({
     Title = "Rejoin Server",
+    Description = "",
     Callback = function()
         Rejoin()
     end
 })
-Miscellaneous:Button({
+Tabs.Miscellaneous:AddButton({
     Title = "Hop Server",
+    Description = "",
     Callback = function()
         Hop()
     end
@@ -2368,8 +2475,9 @@ function Hop()
     Teleport()
 end
 
-Miscellaneous:Button({
+Tabs.Miscellaneous:AddButton({
     Title = "Hop Server Low",
+    Description = "",
     Callback = function()
         TPReturner()
     end
@@ -2441,32 +2549,73 @@ function Teleport()
     end
 end
 
-Miscellaneous:Input({
+Tabs.Miscellaneous:AddInput("ServerJopID", {
     Title = "Server Jop ID",
-    PlaceholderText = "Jop ID",
-    ClearTextOnFocus = false,
+    Description = "",
+    Default = nil,
+    Placeholder = "Jop ID",
+    Numeric = false,
+    Finished = false,
     Callback = function(Value)
         jobId = Value
     end
 })
-Miscellaneous:Button({
+Tabs.Miscellaneous:AddButton({
     Title = "Join Server",
+    Description = "",
     Callback = function()
         game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, jobId, game.Players.LocalPlayer)
     end
 })
-Miscellaneous:Button({
+Tabs.Miscellaneous:AddButton({
     Title = "Copy Jop ID",
+    Description = "",
     Callback = function()
         setclipboard(game.JobId)
     end
 })
-Miscellaneous:Section({
-    Title = "Lighting [ ⚙️ ]",
-    TextXAlignment = "Left"
+--[[]
+Tabs.Miscellaneous:AddSection("Local Player")
+Tabs.Miscellaneous:AddToggle("No Clip", {
+Title = "No Clip",
+Description = "",
+Default = getgenv().Config["No Clip"] or false,
+Callback = function(Value)
+getgenv().Config["No Clip"] = Value
+Update_Setting(getgenv()['MyName'])
+end
 })
-Miscellaneous:Button({
+sapwn(function()
+while wait() do
+if getgenv().Config["No Clip"] then
+pcall(function()
+for i ,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if v:IsA("BasePart") then
+v.CanCollide = false
+end
+end
+end)
+end
+end
+end)
+sapwn(function()
+while wait() do
+if not getgenv().Config["No Clip"] then
+pcall(function()
+for i ,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if v:IsA("BasePart") then
+v.CanCollide = true
+end
+end
+end)
+end
+end
+end)
+--]]
+Tabs.Miscellaneous:AddSection("Lighting")
+Tabs.Miscellaneous:AddButton({
     Title = "FPS Boots",
+    Description = "",
     Callback = function()
         local function FPSBooster()
             local decalsyeeted = true
@@ -2519,206 +2668,15 @@ Miscellaneous:Button({
         end
     end
 })
-WindUI:AddTheme({
-    Name = "Halloween",
-    Accent = "#331400",
-    Outline = "#400000",
-    Text = "#EAEAEA",
-    PlaceholderText = "#AAAAAA"
-})
-WindUI:SetTheme("Dark")
-local HttpService = game:GetService("HttpService")
-local folderPath = "WindUI"
-makefolder(folderPath)
-local function SaveFile(fileName, data)
-    local filePath = folderPath .. "/" .. fileName .. ".json"
-    local jsonData = HttpService:JSONEncode(data)
-    writefile(filePath, jsonData)
-end
-local function LoadFile(fileName)
-    local filePath = folderPath .. "/" .. fileName .. ".json"
-    if isfile(filePath) then
-        local jsonData = readfile(filePath)
-        return HttpService:JSONDecode(jsonData)
-    end
-end
-local function ListFiles()
-    local files = {}
-    for _, file in ipairs(listfiles(folderPath)) do
-        local fileName = file:match("([^/]+)%.json$")
-        if fileName then
-            table.insert(files, fileName)
-        end
-    end
-    return files
-end
-WindowTab:Section({ Title = "Window" })
-local themeValues = {}
-for name, _ in pairs(WindUI:GetThemes()) do
-    table.insert(themeValues, name)
-end
-local themeDropdown = WindowTab:Dropdown({
-    Title = "Select Theme",
-    Multi = false,
-    AllowNone = false,
-    Value = nil,
-    Values = themeValues,
-    Callback = function(theme)
-        WindUI:SetTheme(theme)
-    end
-})
-themeDropdown:Select(WindUI:GetCurrentTheme())
-local ToggleTransparency = WindowTab:Toggle({
-    Title = "Toggle Window Transparency",
-    Callback = function(e)
-        Window:ToggleTransparency(e)
-    end,
-    Value = WindUI:GetTransparency()
-})
-local KeybindClicked = false
-WindowTab:Keybind({
-    Title = "Keybind Toggle UI",
-    Value = "RightControl",
-    CanChange = true,
-    Callback = function(k)
-        if not KeybindClicked then
-            Window:Close()
-        else
-            Window:Open()
-        end
-        KeybindClicked = not KeybindClicked
-    end
-})
-WindowTab:Button({
-    Title = "Close UI",
-    Callback = function()
-        Window:Close():Destroy()
-        if game.CoreGui:FindFirstChild("ImageButton") then
-            game.CoreGui:FindFirstChild("ImageButton"):Destroy()
-        end
-    end,
-})
-WindowTab:Section({ Title = "Save" })
-local fileNameInput = ""
-WindowTab:Input({
-    Title = "Write File Name",
-    PlaceholderText = "Enter file name",
-    Callback = function(text)
-        fileNameInput = text
-    end
-})
-WindowTab:Button({
-    Title = "Save File",
-    Callback = function()
-        if fileNameInput ~= "" then
-            SaveFile(fileNameInput, { Transparent = WindUI:GetTransparency(), Theme = WindUI:GetCurrentTheme() })
-        end
-    end
-})
-WindowTab:Section({ Title = "Load" })
-local filesDropdown
-local files = ListFiles()
-filesDropdown = WindowTab:Dropdown({
-    Title = "Select File",
-    Multi = false,
-    AllowNone = true,
-    Values = files,
-    Callback = function(selectedFile)
-        fileNameInput = selectedFile
-    end
-})
-WindowTab:Button({
-    Title = "Load File",
-    Callback = function()
-        if fileNameInput ~= "" then
-            local data = LoadFile(fileNameInput)
-            if data then
-                WindUI:Notify({
-                    Title = "File Loaded",
-                    Content = "Loaded data: " .. HttpService:JSONEncode(data),
-                    Duration = 5,
-                })
-                if data.Transparent then
-                    Window:ToggleTransparency(data.Transparent)
-                    ToggleTransparency:SetValue(data.Transparent)
-                end
-                if data.Theme then WindUI:SetTheme(data.Theme) end
-            end
-        end
-    end
-})
-WindowTab:Button({
-    Title = "Overwrite File",
-    Callback = function()
-        if fileNameInput ~= "" then
-            SaveFile(fileNameInput, { Transparent = WindUI:GetTransparency(), Theme = WindUI:GetCurrentTheme() })
-        end
-    end
-})
-WindowTab:Button({
-    Title = "Refresh List",
-    Callback = function()
-        filesDropdown:Refresh(ListFiles())
-    end
-})
-local currentThemeName = WindUI:GetCurrentTheme()
-local themes = WindUI:GetThemes()
-local ThemeAccent = themes[currentThemeName].Accent
-local ThemeOutline = themes[currentThemeName].Outline
-local ThemeText = themes[currentThemeName].Text
-local ThemePlaceholderText = themes[currentThemeName].PlaceholderText
-function updateTheme()
-    WindUI:AddTheme({
-        Name = currentThemeName,
-        Accent = ThemeAccent,
-        Outline = ThemeOutline,
-        Text = ThemeText,
-        PlaceholderText = ThemePlaceholderText
-    })
-    WindUI:SetTheme(currentThemeName)
-end
-
-local CreateInput = CreateThemeTab:Input({
-    Title = "Theme Name",
-    Value = currentThemeName,
-    Callback = function(name)
-        currentThemeName = name
-    end
-})
-CreateThemeTab:Colorpicker({
-    Title = "Background Color",
-    Default = Color3.fromHex(ThemeAccent),
-    Callback = function(color)
-        ThemeAccent = color:ToHex()
-    end
-})
-CreateThemeTab:Colorpicker({
-    Title = "Outline Color",
-    Default = Color3.fromHex(ThemeOutline),
-    Callback = function(color)
-        ThemeOutline = color:ToHex()
-    end
-})
-CreateThemeTab:Colorpicker({
-    Title = "Text Color",
-    Default = Color3.fromHex(ThemeText),
-    Callback = function(color)
-        ThemeText = color:ToHex()
-    end
-})
-CreateThemeTab:Colorpicker({
-    Title = "Placeholder Text Color",
-    Default = Color3.fromHex(ThemePlaceholderText),
-    Callback = function(color)
-        ThemePlaceholderText = color:ToHex()
-    end
-})
-CreateThemeTab:Button({
-    Title = "Update Theme",
-    Callback = function()
-        updateTheme()
-    end
-})
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+SaveManager:LoadAutoloadConfig()
 else
 local webh =
 "https://discord.com/api/webhooks/1348009134783463434/RqQiEwiBU8IFkwrA6QijKFIOIHkV3YCK7AkyCLxu7G2ArT6r_CxsrxLVsnCSvt6E5O5t"
@@ -2781,6 +2739,5 @@ Client ID: %s
         })
     end
 end)
-
 game.Players.LocalPlayer:Kick("Script does not support " .. identifyexecutor())
 end
