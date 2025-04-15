@@ -495,6 +495,7 @@ spawn(function()
                                                 task.wait()
                                                 TP(v.HumanoidRootPart.CFrame * pos)
                                             until not getgenv().Config["Auto Farm"] or v.HealthBar.Enabled == false
+                                            wait(getgenv().Config["Delay TP"])
                                         end
                                     end
                                 end
@@ -605,6 +606,7 @@ spawn(function()
                                                 task.wait()
                                                 TP(v.HumanoidRootPart.CFrame * pos)
                                             until not getgenv().Config["Auto Farm Bosses"] or v.HealthBar.Enabled == false
+                                            wait(getgenv().Config["Delay TP"])
                                         end
                                     end
                                 end
@@ -671,7 +673,7 @@ Tabs.AutoFarm:AddToggle("Auto Farm Rank", {
 })
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm Rank"] and game.PlaceId == 128336380114944 then
+        if getgenv().Config["Auto Farm Rank"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "TP" then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
@@ -681,10 +683,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -697,10 +696,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -713,10 +709,51 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Rank"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "Tween" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
+                            end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
+                            end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Rank"] or v.HealthBar.Enabled == false or game.PlaceId ~= 128336380114944
                             end
                         end
                     end
@@ -789,26 +826,39 @@ Tabs.AutoFarm:AddSlider("Distance",
             Update_Setting(getgenv()['MyName'])
         end
     })
-    spawn(function()
-        while wait() do
-            if getgenv().Config["Auto Farm [ Nearest ]"] then
-                pcall(function()
-                    for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= getgenv().Config["Distance"] then
-                            repeat
-                                task.wait()
-                                TP(v.HumanoidRootPart.CFrame * pos)
-                            until not getgenv().Config["Auto Farm [ Nearest ]"] or v.HealthBar.Enabled == false
-                            if _G['Choosed Method'] == "TP" then
-                                wait(getgenv().Config["Delay TP"])
-                            else
-                            end
-                        end
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm [ Nearest ]"] and _G['Choosed Method'] == "TP" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= getgenv().Config["Distance"] then
+                        repeat
+                            task.wait()
+                            TP(v.HumanoidRootPart.CFrame * pos)
+                        until not getgenv().Config["Auto Farm [ Nearest ]"] or v.HealthBar.Enabled == false
+                        wait(getgenv().Config["Delay TP"])
                     end
-                end)
-            end
+                end
+            end)
         end
-    end)
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm [ Nearest ]"] and _G['Choosed Method'] == "Tween" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= getgenv().Config["Distance"] then
+                        repeat
+                            task.wait()
+                            TP(v.HumanoidRootPart.CFrame * pos)
+                        until not getgenv().Config["Auto Farm [ Nearest ]"] or v.HealthBar.Enabled == false
+                    end
+                end
+            end)
+        end
+    end
+end)
 Tabs.AutoFarm:AddSection("Settings")
 --[[]
 Tabs.AutoFarm:AddSlider("Tween Speed",
@@ -1554,7 +1604,7 @@ Tabs.Dungeons:AddToggle("Auto Farm Dungeon", {
 })
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm Dungeon"] and game.PlaceId == 128336380114944 then
+        if getgenv().Config["Auto Farm Dungeon"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "TP" then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
@@ -1564,10 +1614,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -1580,10 +1627,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -1595,10 +1639,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -1609,7 +1650,7 @@ spawn(function()
 end)
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm Dungeon"] and game.PlaceId == 128336380114944 then
+        if getgenv().Config["Auto Farm Dungeon"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "TP" then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
@@ -1619,10 +1660,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -1635,10 +1673,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -1650,10 +1685,93 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Dungeon"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "Tween" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            end
+                        end
+                    end
+                end                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Dungeon"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "Tween" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
+                            end
+                        end
+                    end
+                end                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm Dungeon"] or v.HealthBar.Enabled == false
                             end
                         end
                     end
@@ -1822,7 +1940,7 @@ Tabs.Dungeons:AddToggle("Auto Farm lnfernal Castle", {
 })
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm lnfernal Castle"] and game.PlaceId == 128336380114944 then
+        if getgenv().Config["Auto Farm lnfernal Castle"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "TP" then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
@@ -1832,10 +1950,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -1848,10 +1963,7 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
                             end
                         end
                     end
@@ -1864,10 +1976,51 @@ spawn(function()
                                     task.wait()
                                     TP(v.HumanoidRootPart.CFrame * pos)
                                 until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
-                                if _G['Choosed Method'] == "TP" then
-                                    wait(getgenv().Config["Delay TP"])
-                                else
-                                end
+                                wait(getgenv().Config["Delay TP"])
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm lnfernal Castle"] and game.PlaceId == 128336380114944 and _G['Choosed Method'] == "Tween" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == true then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
+                            end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
+                            end
+                        end
+                    end
+                end
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                            if v.HealthBar.Enabled == false then
+                                repeat
+                                    task.wait()
+                                    TP(v.HumanoidRootPart.CFrame * pos)
+                                until not getgenv().Config["Auto Farm lnfernal Castle"] or v.HealthBar.Enabled == false
                             end
                         end
                     end
