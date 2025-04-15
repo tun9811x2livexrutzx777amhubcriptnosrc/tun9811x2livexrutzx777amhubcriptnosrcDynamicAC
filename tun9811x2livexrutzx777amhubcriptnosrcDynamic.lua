@@ -481,7 +481,7 @@ Tabs.AutoFarm:AddToggle("Auto Farm", {
 local pos = CFrame.new(0, 0, 1.5)
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm"] and _G['Select Monster'] then
+        if getgenv().Config["Auto Farm"] and _G['Select Monster'] and _G['Choosed Method'] == "TP" then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
@@ -495,9 +495,33 @@ spawn(function()
                                                 task.wait()
                                                 TP(v.HumanoidRootPart.CFrame * pos)
                                             until not getgenv().Config["Auto Farm"] or v.HealthBar.Enabled == false
-                                            if _G['Choosed Method'] == "TP" then
-                                                wait(getgenv().Config["Delay TP"])
-                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm"] and _G['Select Monster'] and _G['Choosed Method'] == "Tween" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        for selectedName, isSelected in pairs(_G['Select Monster'] or {}) do
+                            if isSelected and checkmon == selectedName then
+                                if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
+                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
+                                        if v.HealthBar.Enabled == true then
+                                            repeat
+                                                task.wait()
+                                                TP(v.HumanoidRootPart.CFrame * pos)
+                                            until not getgenv().Config["Auto Farm"] or v.HealthBar.Enabled == false
                                         end
                                     end
                                 end
@@ -567,7 +591,7 @@ Tabs.AutoFarm:AddToggle("Auto Farm Bosses", {
 })
 spawn(function()
     while wait() do
-        if getgenv().Config["Auto Farm Bosses"] and _G['Select Bosses'] then
+        if getgenv().Config["Auto Farm Bosses"] and _G['Select Bosses'] and _G['Choosed Method'] == "TP" then
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
@@ -581,9 +605,33 @@ spawn(function()
                                                 task.wait()
                                                 TP(v.HumanoidRootPart.CFrame * pos)
                                             until not getgenv().Config["Auto Farm Bosses"] or v.HealthBar.Enabled == false
-                                            if _G['Choosed Method'] == "TP" then
-                                                wait(getgenv().Config["Delay TP"])
-                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    while wait() do
+        if getgenv().Config["Auto Farm Bosses"] and _G['Select Bosses'] and _G['Choosed Method'] == "Tween" then
+            pcall(function()
+                for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
+                    if v:IsA("Model") and v:FindFirstChild("HealthBar") then
+                        local checkmon = v.HealthBar.Main.Title.Text
+                        for selectedName, isSelected in pairs(_G['Select Bosses'] or {}) do
+                            if isSelected and checkmon == selectedName then
+                                if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
+                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
+                                        if v.HealthBar.Enabled == true then
+                                            repeat
+                                                task.wait()
+                                                TP(v.HumanoidRootPart.CFrame * pos)
+                                            until not getgenv().Config["Auto Farm Bosses"] or v.HealthBar.Enabled == false
                                         end
                                     end
                                 end
