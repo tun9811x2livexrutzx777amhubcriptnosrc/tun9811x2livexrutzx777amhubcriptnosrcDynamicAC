@@ -489,7 +489,7 @@ spawn(function()
                         for selectedName, isSelected in pairs(_G['Select Monster'] or {}) do
                             if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
-                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
+                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                                         if v.HealthBar.Enabled == true then
                                             repeat
                                                 task.wait()
@@ -517,7 +517,7 @@ spawn(function()
                         for selectedName, isSelected in pairs(_G['Select Monster'] or {}) do
                             if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(2, 2, 1) then
-                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
+                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                                         if v.HealthBar.Enabled == true then
                                             repeat
                                                 task.wait()
@@ -600,7 +600,7 @@ spawn(function()
                         for selectedName, isSelected in pairs(_G['Select Bosses'] or {}) do
                             if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
-                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
+                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                                         if v.HealthBar.Enabled == true then
                                             repeat
                                                 task.wait()
@@ -628,7 +628,7 @@ spawn(function()
                         for selectedName, isSelected in pairs(_G['Select Bosses'] or {}) do
                             if isSelected and checkmon == selectedName then
                                 if v.HumanoidRootPart.Size == Vector3.new(4, 4, 2) then
-                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 99999999 then
+                                    if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                                         if v.HealthBar.Enabled == true then
                                             repeat
                                                 task.wait()
@@ -677,7 +677,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -724,7 +724,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -1608,7 +1608,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -1654,7 +1654,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -1700,7 +1700,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -1743,7 +1743,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -1944,7 +1944,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
@@ -1991,7 +1991,7 @@ spawn(function()
             pcall(function()
                 for i, v in pairs(game.workspace.__Main.__Enemies.Client:GetChildren()) do
                     if v:IsA("Model") and v:FindFirstChild("HealthBar") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 999999999999999999999999999 then
+                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1500 then
                             if v.HealthBar.Enabled == true then
                                 repeat
                                     task.wait()
